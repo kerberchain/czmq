@@ -5,6 +5,14 @@
 <a target="_blank" href="http://webchat.freenode.net?channels=%23zeromq&uio=d4"><img src="https://cloud.githubusercontent.com/assets/493242/14886493/5c660ea2-0d51-11e6-8249-502e6c71e9f2.png" height = "20" /></a>
 [![license](https://img.shields.io/github/license/zeromq/czmq.svg)](https://github.com/zeromq/czmq/blob/master/LICENSE)
 
+# CZMQ Fork by Kerberchain (Nicolas Cloutier) to fix the undeclared environ problem on OSX High Sierra
+
+## When you build on High Sierra you will get the following error: 
+src/zproc.c:537:19: error: use of undeclared identifier 'environ'
+            env = environ;
+
+You can either clone the osx branch here or modify src/zproc.c manually by commenting the else clause at line 537 then run make again. This will fix the problem.
+
 # CZMQ - High-level C binding for ØMQ
 
 | Linux & MacOSX | Windows  |
