@@ -533,8 +533,10 @@ s_zproc_execve (zproc_t *self)
             }
             arr_add_ref (env, i, NULL);
         }
+     /* NEED TO BE COMMENTED OUT TO WORK ON OSX HIGH SIERRA
         else
             env = environ;
+            */
 
         r = execve (filename, argv2, env);
         if (r == -1) {
